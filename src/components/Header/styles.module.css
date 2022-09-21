@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 3px solid black;
+}
+.icon {
+  max-width: 23px;
+}
