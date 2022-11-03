@@ -1,9 +1,19 @@
 .root {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
   border-bottom: 3px solid black;
+  padding: 0 60px;
 }
 .icon {
   max-width: 23px;
+}
+.logo {
+  max-width: 70px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
 }

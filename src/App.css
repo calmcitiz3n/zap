@@ -28,11 +28,44 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: "RobotoRegular";
+  src: local("RobotoRegular"),
+    url("./fonts/roboto/Roboto-Regular.ttf") format("truetype");
+  font-weight: regular;
+}
+@font-face {
+  font-family: "RobotoBold";
+  src: local("RobotoBold"),
+    url("./fonts/roboto/Roboto-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "RobotoMedium";
+  src: local("RobotoMedium"),
+    url("./fonts/roboto/Roboto-Medium.ttf") format("truetype");
+  font-weight: medium;
+}
+@font-face {
+  font-family: "soulmazeRegular";
+  src: local("soulmazeRegular"),
+    url("./fonts/soulmaze/soulmaze-regular.woff") format("woff");
+  font-weight: regular;
+}
+
+.font-face-rbt-reg {
+  font-family: RobotoRegular;
+  font-weight: regular;
+}
+.font-face-rbt-bol {
+  font-family: RobotoBold;
+  font-weight: bold;
+}
+.font-face-rbt-med {
+  font-family: RobotoMedium;
+  font-weight: medium;
+}
+.font-face-soul-reg {
+  font-family: RobotoMedium;
+  font-weight: medium;
 }

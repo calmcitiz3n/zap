@@ -5,10 +5,14 @@ import styles from "./styles.module.css";
 export const Header = () => {
   return (
     <div className={styles.root}>
-      {Logo}
+      <img src={Logo} alt="logo" className={styles.logo} />
       <div className={styles.icons}>
-        <div className={styles.icon}>{Login}</div>
-        <div className={styles.icon}>{Basket}</div>
+        <div className={styles.icon}>
+          <img src={Login} alt="login" />
+        </div>
+        <div className={styles.icon}>
+          <img src={Basket} alt="basket" />
+        </div>
       </div>
     </div>
   );

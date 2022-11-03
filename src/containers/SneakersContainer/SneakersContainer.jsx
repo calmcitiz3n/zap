@@ -1,4 +1,4 @@
-import { Sneakers } from "../../components/Items";
+import { Sneakers } from "../../components/Sneakers/Sneakers";
 export const SneakersContainer = () => {
   return <Sneakers />;
 };
