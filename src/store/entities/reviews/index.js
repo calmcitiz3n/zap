@@ -5,15 +5,17 @@ export const initialState = {
   ids: [],
   status: "idle",
 };
-const SLICE_NAME = "review";
+const SLICE_NAME = "reviews";
 export const reviewSlice = createSlice({
   name: SLICE_NAME,
   initialState,
   reducers: {
     finishLoading: (state, action) => {
-      const reviews = action.payload.reviews;
+      const reviews = action.payload;
+      console.log(reviews);
       state.entities = reviews.reduce((acc, review) => {
-        acc[review] = review;
+        const id = review?.id;
+        acc[id] = review;
         return acc;
       }, {});
       state.ids = reviews.map(({ id }) => id);

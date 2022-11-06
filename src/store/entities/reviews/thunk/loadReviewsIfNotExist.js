@@ -1,16 +1,21 @@
-// import { sneakerSlice } from "../../sneakers";
-
-// export const loadReviewsIfNotExist = () => (dispatch, getState) => {
-//   const state = getState();
-//   // if () {
-//   //     return
-//   // } //В проверку мы достаём из стора с помощью селекторов сущности. если он пустой, то работаем дальше. Иначе return
-//   dispatch(sneakerSlice.startLoading());
-//   fetch("http://localhost:3001/api/reviews/")
-//     .then((res) => res.json())
-//     .then((reviews) => sneakerSlice.finishLoading({ reviews }))
-//     .catch((err) => {
-//       console.log(error);
-//       sneakerSlice.failedLoading();
-//     });
-// };
+import { reviewSlice } from "../index";
+import { selectLoadingStatus, selectReviewsIds } from "../selectors";
+import axios from "axios";
+export const loadReviewsIfNotExist = () => async (dispatch, getState) => {
+  const state = getState();
+  if (
+    selectReviewsIds(state)?.length !== 0 ||
+    selectLoadingStatus(state) === "start"
+  ) {
+    console.log("!!!!!!!");
+    return;
+  } //В проверку мы достаём из стора с помощью селекторов сущности. если он пустой, то работаем дальше. Иначе return
+  dispatch(reviewSlice.actions.startLoading());
+  const response = await axios.get("http://localhost:3001/api/reviews/");
+  if (!response) {
+    dispatch(reviewSlice.actions.failedLoading());
+    throw new Error("Не удалось получить отзывы");
+  }
+  console.log("response.data", response.data);
+  dispatch(reviewSlice.actions.finishLoading(response.data));
+};

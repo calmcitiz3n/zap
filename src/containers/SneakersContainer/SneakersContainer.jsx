@@ -1,4 +1,4 @@
-import { Sneakers } from "../../components/Sneakers/Sneakers";
-export const SneakersContainer = () => {
-  return <Sneakers />;
-};
+// import { SneakersInfo } from "../../components/SneakerInfo/SneakerInfo";
+// export const SneakersContainer = () => {
+//   return <SneakersInfo />;
+// };

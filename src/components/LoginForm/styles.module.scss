@@ -1,0 +1,75 @@
+%full-width {
+  width: 100%;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  width: 350px;
+}
+.submit {
+  @extend %full-width;
+  border-radius: 0px;
+  border: 0px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  padding: 5px 10px;
+}
+.submit:hover {
+  background-color: #000;
+  cursor: pointer;
+  color: #fff;
+}
+.input {
+  @extend %full-width;
+  background-color: gainsboro;
+  padding: 7px;
+  border: 0px;
+  padding: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.08);
+}
+.input:focus {
+  outline: 1px solid black;
+}
+
+.buttons {
+  @extend %full-width;
+}
+.button {
+  width: 50%;
+  border-radius: 0px;
+  border: 0px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-right: 2px solid black;
+}
+
+.button:last-child {
+  border-right: 0px;
+}
+.button:focus {
+  background-color: #000;
+  color: #fff;
+}
+.fieldset {
+  border: 0px;
+  display: flex;
+  margin: 0;
+  /* justify-content: center; */
+}
+.areas {
+  padding: 15px 0;
+}
+.shadowGreen {
+  -webkit-box-shadow: 0px 13px 11px 3px rgba(29, 227, 79, 0.3);
+  -moz-box-shadow: 0px 13px 11px 3px rgba(29, 227, 79, 0.3);
+  box-shadow: 0px 13px 11px 3px rgba(29, 227, 79, 0.3);
+}
+.shadowRed {
+  -webkit-box-shadow: 0px 13px 11px 3px rgba(210, 25, 25, 0.3);
+  -moz-box-shadow: 0px 13px 11px 3px rgba(210, 25, 25, 0.3);
+  box-shadow: 0px 13px 11px 3px rgba(210, 25, 25, 0.3);
+}

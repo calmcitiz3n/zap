@@ -1,0 +1,57 @@
+@mixin transition($x...) {
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+  transition: $x;
+}
+
+.root {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+  padding: 20px;
+  width: 100%;
+  @include transition(3s);
+}
+.root:hover {
+  outline: 1px solid black;
+}
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 14px;
+  width: 100%;
+}
+.name {
+  font-size: 32px;
+}
+.review {
+  font-size: 22px;
+}
+.icon {
+  width: 120px;
+  display: flex;
+  align-items: flex-start;
+  top: 0;
+  left: 0;
+}
+.thanks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: start;
+}
+.nameBlock {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.rating {
+  padding-bottom: 0px;
+}
+.iconBlock {
+  display: flex;
+  align-items: flex-start;
+}

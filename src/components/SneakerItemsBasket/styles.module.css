@@ -1,0 +1,10 @@
+.totalPrice {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.totalText {
+  font-weight: 600;
+}
+.price {
+}

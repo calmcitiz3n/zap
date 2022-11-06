@@ -5,6 +5,7 @@ import {
   selectBrandsIds,
   selectBrandsModule,
 } from "../../store/entities/brands/selectors";
+import React, { Component } from "react";
 import { loadBrandsIfNotExist } from "../../store/entities/brands/thunk/loadBrandsIfNotExist";
 import { BrandTabs } from "../../components/BrandTabs/BrandTabs";
 import { store } from "../../store";

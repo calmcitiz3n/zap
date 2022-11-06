@@ -5,7 +5,7 @@ import { brands, Sneaker } from "./models/sneaker.js";
 import { User } from "./models/user.js";
 const router = Router();
 
-router.post("/users/new", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
     throw new Error("Not enough data");
@@ -15,6 +15,7 @@ router.post("/users/new", async (req, res) => {
     name,
     password,
   });
+  console.log(user);
 
   res.status(201).json(user);
 });
@@ -59,6 +60,10 @@ router.get("/brands/", async (req, res) => {
 router.get("/sneakers/", async (req, res) => {
   const sneakers = await Sneaker.findAll();
   res.status(200).json(sneakers);
+});
+router.get("/reviews/", async (req, res) => {
+  const review = await Review.findAll();
+  res.status(200).json(review);
 });
 // router.get("/users/:email", async (req, res) => {
 //   const { email } = req.params;

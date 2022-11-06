@@ -6,9 +6,12 @@
   justify-content: space-between;
   border-bottom: 3px solid black;
   padding: 0 60px;
+  flex: 0 0 auto;
 }
 .icon {
-  max-width: 23px;
+  width: 32px;
+  height: 32px;
+  padding-right: 15px;
 }
 .logo {
   max-width: 70px;

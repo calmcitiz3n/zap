@@ -11,7 +11,7 @@ export const sneakerSlice = createSlice({
   initialState,
   reducers: {
     finishLoading: (state, action) => {
-      const sneakers = action.payload.sneakers;
+      const sneakers = action.payload;
       state.entities = sneakers.reduce((acc, sneaker) => {
         acc[sneaker.id] = sneaker;
         return acc;

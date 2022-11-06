@@ -1,0 +1,10 @@
+.root {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.text {
+  font-size: 48px;
+  font-family: soulmazeRegular;
+}

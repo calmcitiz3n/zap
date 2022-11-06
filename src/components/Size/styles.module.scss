@@ -1,0 +1,27 @@
+.sizeButton {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  border-color: none;
+  width: 58px;
+  height: 30px;
+  border: 0px;
+}
+.sizeButton:hover {
+  cursor: pointer;
+  content: "";
+  @extend %is-active;
+  transition: 0.3s;
+}
+
+%is-active {
+  background-color: black;
+  color: aliceblue;
+}
+.sizeButton:active {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid black;
+  transition: 0.2s;
+}

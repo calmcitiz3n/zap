@@ -213,5 +213,47 @@ export async function seed() {
       image:
         "https://img.brandshop.ru/cache/products/s/s2044-636-0_1104x1104.jpg",
     },
+    {
+      id: "99154trf-f4ty-7rfh-22q3-12r8fju7zd6e",
+      name: "Gazelle ADV Suciu ",
+      price: 10990,
+      sizes: [42, 45],
+      brand: "adidas",
+      image: "https://img.brandshop.ru/cache/products/g/gy3688-0_1104x1104.jpg",
+    },
+    {
+      id: "5412fs-dery-v42d-2r5y-7udjfurn3u4",
+      name: "Prophere",
+      price: 8290,
+      sizes: [42, 43, 44, 45],
+      brand: "adidas",
+      image: "https://img.brandshop.ru/cache/products/f/fy3366-0_1104x1104.jpg",
+    },
+    {
+      id: "j5rt7c-5t4x-7yc3-3rrt-0r84utyv6d3",
+      name: "Space Hippie 04",
+      price: 8290,
+      sizes: [41.5, 42, 43, 44, 45],
+      brand: "nike",
+      image:
+        "https://img.brandshop.ru/cache/products/c/cz6398-002-1_1104x1104.jpg",
+    },
+    {
+      id: "g6r4dc-9t4c-g64e-l4r3-8gu3kdjvyr4",
+      name: "Air Max 270 ",
+      price: 8290,
+      sizes: [42],
+      brand: "nike",
+      image:
+        "https://img.brandshop.ru/cache/products/m/muzhskie-krossovki-nike-air-max-270-black-white-0_1104x1104.jpg",
+    },
+    {
+      id: "ef4g1fbt4-1f4g-4gddag46d3",
+      name: "Classic Leather",
+      price: 9930,
+      sizes: [43, 45],
+      brand: "reebok",
+      image: "https://img.brandshop.ru/cache/products/g/gy3558-0_1104x1104.jpg",
+    },
   ]);
 }

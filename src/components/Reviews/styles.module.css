@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  align-items: center;
+}
+.header {
+  font-size: 48px;
+}

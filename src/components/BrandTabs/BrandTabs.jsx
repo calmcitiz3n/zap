@@ -1,6 +1,8 @@
 import { BrandTabContainer } from "../../containers/BrandTabContainer/BrandTabContainer";
 import styles from "./styles.module.css";
 import { store } from "../../store";
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 export const BrandTabs = ({ brandIds }) => {
   if (!brandIds) {
     return null;
@@ -8,10 +10,8 @@ export const BrandTabs = ({ brandIds }) => {
 
   return (
     <div className={styles.root}>
-      {brandIds.map((brandId) => (
-        <Link to={brandId}>
-          <BrandTabContainer id={brandId} />
-        </Link>
+      {brandIds.map((id) => (
+        <BrandTabContainer key={id} id={id} />
       ))}
     </div>
   );

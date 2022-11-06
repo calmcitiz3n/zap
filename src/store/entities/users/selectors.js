@@ -7,3 +7,5 @@ export const selectUsersIds = (state) => selectUsersModule(state)?.ids;
 export const selectUserById = (state, { id }) =>
   selectUsersEntities(state)[id]?.name;
 export const selectLoadingStatus = (state) => selectUsersModule(state)?.status;
+export const selectInterviewerDataByInterviewerId = (state, { userId }) =>
+  selectUsersEntities(state).find((user) => user?.userId === userId);

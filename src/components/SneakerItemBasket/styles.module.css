@@ -1,0 +1,75 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 200px;
+  margin: 15px 0;
+  max-width: 750px;
+  padding: 15px;
+  color: black;
+}
+.image img {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+.cleanIcon {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.price {
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  padding-right: 15px;
+  width: 50px;
+}
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  font-size: 18px;
+}
+.name {
+  display: flex;
+  font-size: 24px;
+  justify-content: flex-start;
+  align-items: center;
+  width: 250px;
+  margin-right: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.countAndSize {
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+.count {
+  display: flex;
+  flex-direction: row;
+  padding: 0 15px;
+}
+.button {
+  border: none;
+  border-radius: 0;
+  padding: 15px;
+  width: 40px;
+}
+.root:hover {
+  outline: 2px solid #f2f2f2;
+  transition: 0.5s;
+}

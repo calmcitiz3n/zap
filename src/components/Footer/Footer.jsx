@@ -1,4 +1,6 @@
 import styles from "./styles.module.css";
+import React, { Component } from "react";
+
 export const Footer = () => {
   return (
     <div className={styles.root}>

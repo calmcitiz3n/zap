@@ -5,15 +5,16 @@ export const initialState = {
   ids: [],
   status: "idle",
 };
-const SLICE_NAME = "user";
+const SLICE_NAME = "users";
 export const userSlice = createSlice({
   name: SLICE_NAME,
   initialState,
   reducers: {
     finishLoading: (state, action) => {
-      const users = action.payload.users;
+      const users = action.payload;
       state.entities = users.reduce((acc, user) => {
-        acc[user] = user;
+        const id = user?.id;
+        acc[id] = user;
         return acc;
       }, {});
       state.ids = users.map(({ id }) => id);
