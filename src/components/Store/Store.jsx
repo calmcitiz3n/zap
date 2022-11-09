@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import React from "react";
 import classnames from "classnames";
 import { store } from "../../store";
-import { BrandTabsContainer } from "../../containers/BrandTabsContainer/BrandTabsContainer";
+import { BrandTabsContainer } from "../../containers/BrandTabsContainer/BrandTabsContainer.tsx";
 import { Outlet } from "react-router-dom";
 
 export const Store = () => {

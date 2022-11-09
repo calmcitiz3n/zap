@@ -1,3 +1,4 @@
+import axios from "axios";
 import { brandSlice } from "..";
 import { selectBrandsIds } from "../selectors";
 import { selectLoadingStatus } from "../selectors";
@@ -10,13 +11,10 @@ export const loadBrandsIfNotExist = () => (dispatch, getState) => {
     return;
   }
   dispatch(brandSlice.actions.startLoading());
-  fetch("http://localhost:3001/api/brands/")
-    .then((res) => res.json())
-    .then((brands) => {
-      dispatch(brandSlice.actions.finishLoading({ brands }));
-    })
-    .catch((err) => {
-      console.log(err);
-      dispatch(brandSlice.actions.failedLoading());
-    });
+  const response = axios.get("http://localhost:3001/api/brands/");
+  if (!response) {
+    dispatch(brandSlice.actions.failedLoading());
+    throw new Error("Брендов нет!");
+  }
+  dispatch(brandSlice.actions.finishLoading(response));
 };

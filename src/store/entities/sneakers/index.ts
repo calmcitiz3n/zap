@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 export const initialState = {
   entities: {},
   ids: [],
   status: "idle",
 };
+
 const SLICE_NAME = "sneaker";
 export const sneakerSlice = createSlice({
   name: SLICE_NAME,

@@ -1,5 +1,12 @@
-import { createSlice } from "@reduxjs/toolkit";
-
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { statusType, initialStateType, Action, Payload } from "../types/types";
+type Brand = {
+  id: string;
+  name: string;
+  assortment: string[];
+  createdAt: string;
+  updatedAt: string;
+};
 export const initialState = {
   entities: {},
   ids: [],
@@ -10,13 +17,15 @@ export const brandSlice = createSlice({
   name: SLICE_NAME,
   initialState,
   reducers: {
-    finishLoading: (state, action) => {
-      const brands = action.payload.brands;
-      state.entities = brands.reduce((acc, brand) => {
+    finishLoading: (state, action: PayloadAction<Brand[]>) => {
+      if (!action.payload.length) {
+        return state;
+      }
+      const acc: Payload = {};
+      for (const brand of action.payload) {
         acc[brand.id] = brand;
-        return acc;
-      }, {});
-      state.ids = brands.map(({ id }) => id);
+        state.ids.push(brand.id as never);
+      }
       state.status = "finish";
       return state;
     },

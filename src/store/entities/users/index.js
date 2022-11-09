@@ -12,6 +12,7 @@ export const userSlice = createSlice({
   reducers: {
     finishLoading: (state, action) => {
       const users = action.payload;
+      console.log(users);
       state.entities = users.reduce((acc, user) => {
         const id = user?.id;
         acc[id] = user;

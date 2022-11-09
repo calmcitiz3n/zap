@@ -1,17 +1,22 @@
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import closeIcon from "./icn/close.png";
 import classNames from "classnames";
 import CSSTransition from "react-transition-group/CSSTransition";
-
+type DeliveryAndPaymentProps = {
+  activePopUp: boolean;
+  setActivePopUp: React.Dispatch<React.SetStateAction<boolean>>;
+  classname: string;
+};
+// interface setActivePopUpData
 export const DeliveryAndPayment = ({
   activePopUp,
   setActivePopUp,
   classname,
-}) => {
+}: DeliveryAndPaymentProps) => {
   return (
     <CSSTransition
       in={activePopUp}
-      timeout={400}
+      timeout={200}
       classNames={styles}
       unmountOnExit
     >

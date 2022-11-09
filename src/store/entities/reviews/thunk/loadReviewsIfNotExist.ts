@@ -1,7 +1,7 @@
-import { reviewSlice } from "../index";
 import { selectLoadingStatus, selectReviewsIds } from "../selectors";
 import axios from "axios";
-export const loadReviewsIfNotExist = () => async (dispatch, getState) => {
+import { Action } from "store/entities/types/types";
+export const loadReviewsIfNotExist = () => async (dispatch<Action>, getState ) => {
   const state = getState();
   if (
     selectReviewsIds(state)?.length !== 0 ||

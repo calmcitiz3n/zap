@@ -4,12 +4,11 @@ import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SneakersStorePage } from "./pages/SneakersStorePage/SneakersStorePage";
-import { StoreItems } from "./components/StoreItems/StoreItems";
+
 import { StoreItemsContainer } from "./containers/StoreItemsContainer/StoreItemsContainer";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { BasketPage } from "./pages/BasketPage/BasketPage";
 import { SneakerPage } from "./pages/SneakerPage/SneakerPage";
-// import { SneakerPage } from "./pages/SneakerPage/SneakerPage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { ReviewsPage } from "./pages/ReviewsPage/ReviewsPage";
 export const App = () => {

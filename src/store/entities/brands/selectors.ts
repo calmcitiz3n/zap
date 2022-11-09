@@ -1,5 +1,4 @@
 import { selectEntitiesModule } from "../selectors";
-
 export const selectBrandsModule = (state) =>
   selectEntitiesModule(state)?.brands;
 export const selectBrandsEntities = (state) =>
@@ -7,7 +6,7 @@ export const selectBrandsEntities = (state) =>
 export const selectBrandsIds = (state) => selectBrandsModule(state)?.ids;
 export const selectBrandById = (state, { id }) =>
   selectBrandsEntities(state)[id];
-export const selectBrandByIdName = (state, { id }) =>
+export const selectBrandByIdName = (state, { id }):string =>
   selectBrandsEntities(state)[id]?.name;
 
 export const selectLoadingStatus = (state) => selectBrandsModule(state)?.status;

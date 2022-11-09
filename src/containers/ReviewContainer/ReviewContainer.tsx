@@ -9,18 +9,22 @@ import { selectReviewsById } from "../../store/entities/reviews/selectors";
 import { useEffect } from "react";
 import { loadUsersIfNotExist } from "../../store/entities/users/thunk/loadUsersIfNotExist";
 import { useDispatch } from "react-redux";
-
-export const ReviewContainer = ({ id }) => {
+interface ReviewContainerProps {
+  id: string;
+}
+const ReviewContainer: React.FC<ReviewContainerProps> = ({ id }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     const loadUsers = loadUsersIfNotExist();
     dispatch(loadUsers);
   }, []);
-  const reviewData = useSelector((state) => selectReviewsById(state, { id }));
-  const reviewerId = useSelector((state) =>
+  const reviewData: {} = useSelector((state) =>
+    selectReviewsById(state, { id })
+  );
+  const reviewerId: string = useSelector((state) =>
     selectReviewerIdByReviewId(state, { id })
   );
-  const reviewerData = useSelector((state) =>
+  const reviewerData: string = useSelector((state) =>
     selectUserById(state, { id: reviewerId })
   );
   console.log(reviewerData);
@@ -32,3 +36,4 @@ export const ReviewContainer = ({ id }) => {
     />
   );
 };
+export default ReviewContainer;

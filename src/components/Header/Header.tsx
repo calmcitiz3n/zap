@@ -2,7 +2,7 @@ import Login from "./icn/accountIcon.png";
 import Basket from "./icn/basketIcon.png";
 import Logo from "./img/logo.png";
 import Reviews from "./icn/reviewsIcon.png";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 import { Link } from "react-router-dom";
 import { BasketPage } from "../../pages/BasketPage/BasketPage";
 export const Header = () => {
