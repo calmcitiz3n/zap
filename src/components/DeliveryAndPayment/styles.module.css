@@ -20,7 +20,6 @@
   width: 30px;
   cursor: pointer;
 }
-
 .enter {
   opacity: 1;
   transform: translateX(0); /* transition: opacity 300ms, transform 300ms; */

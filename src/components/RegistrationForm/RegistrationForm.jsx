@@ -1,4 +1,4 @@
-import styles from "../AuthorizationForm/styles.module.scss";
+import styles from "./RegistrationForm.module.css";
 import React from "react";
 import classnames from "classnames";
 export const RegistrationForm = ({

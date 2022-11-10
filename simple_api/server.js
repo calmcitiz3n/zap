@@ -19,8 +19,8 @@ app.listen(port, async function (err) {
     console.log(err);
     throw err;
   }
-  await initPostgresConnection(false, database);
-  // seed();
+  await initPostgresConnection(true, database);
+  seed();
 
   console.log("Listening at http://localhost:" + port + "/api");
 });

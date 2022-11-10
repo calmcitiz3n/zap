@@ -5,8 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 export const SizeContainer = ({ size, selectSize, addToBasket }) => {
   const notify = () =>
     toast.success("Товар добавлен в корзину", {
-      position: "top-right",
-      autoClose: 5000,
+      position: "bottom-right",
+      autoClose: 1200,
       hideProgressBar: false,
       closeOnClick: false,
       pauseOnHover: true,

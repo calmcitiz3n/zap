@@ -2,9 +2,10 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { basketSlice } from "../../store/ui";
 import { Link } from "react-router-dom";
-import { uiReducer } from "../../store/ui/basket/reducer";
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
+import { ImagePopUpComponent } from "../ImagePopUpComponent/ImagePopUpComponent";
 import clean from "./img/clean.png";
+import { useState } from "react";
 export const SneakerItemBasket = ({
   size,
   count,
@@ -14,6 +15,7 @@ export const SneakerItemBasket = ({
   price,
   brand,
 }) => {
+  const [imagePopUp, setImagePopUp] = useState(false);
   const dispatch = useDispatch();
   const increment = useCallback(() =>
     dispatch(basketSlice.actions.removeProduct({ sneakerPairId, size, price }))
@@ -25,36 +27,38 @@ export const SneakerItemBasket = ({
     dispatch(basketSlice.actions.cleanElement({ sneakerPairId, size }))
   );
   return (
-    <Link
-      to={`../sneakers/${sneakerPairId}`}
-      style={{ textDecoration: "none" }}
-    >
-      <div className={styles.root}>
-        <div className={styles.image}>
-          <img src={image} alt="" />
-        </div>
-        <div className={styles.container}>
+    <div className={styles.root}>
+      <div className={styles.image} onClick={() => setImagePopUp(true)}>
+        <img src={image} alt="" />
+      </div>
+      <ImagePopUpComponent
+        href={image}
+        setImagePopUp={setImagePopUp}
+        imagePopUp={imagePopUp}
+      />
+      <div className={styles.container}>
+        <Link to={`../sneakers/${sneakerPairId}`} className={styles.link}>
           <div className={styles.name}>{name}</div>
-          <div className={styles.brand}>{brand}</div>
+        </Link>
+        <div className={styles.brand}>{brand}</div>
 
-          <div className={styles.countAndSize}>
-            <div className={styles.count}>
-              <button onClick={increment} className={styles.button}>
-                -
-              </button>
-              <div className={styles.count}>{count}</div>
-              <button onClick={decrement} className={styles.button}>
-                +
-              </button>
-            </div>
-            <div className={styles.size}>{size}</div>
+        <div className={styles.countAndSize}>
+          <div className={styles.count}>
+            <button onClick={increment} className={styles.button}>
+              -
+            </button>
+            <div className={styles.count}>{count}</div>
+            <button onClick={decrement} className={styles.button}>
+              +
+            </button>
           </div>
-        </div>
-        <div className={styles.price}>{price * count} ₽ </div>
-        <div className={styles.clean} onClick={cleanElement}>
-          <img src={clean} alt="" className={styles.cleanIcon} />
+          <div className={styles.size}>{size}</div>
         </div>
       </div>
-    </Link>
+      <div className={styles.price}>{price * count} ₽ </div>
+      <div className={styles.clean} onClick={cleanElement}>
+        <img src={clean} alt="" className={styles.cleanIcon} />
+      </div>
+    </div>
   );
 };

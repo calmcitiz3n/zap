@@ -38,6 +38,7 @@
   max-width: 232px;
   border: none;
   margin-bottom: 2px;
+  border-radius: 3px;
 }
 .enter {
   opacity: 0;

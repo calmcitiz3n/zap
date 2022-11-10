@@ -2,15 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.root:nth-child(n) {
-  margin-right: 30px;
-}
-.root:nth-child(3n) {
-  margin-right: 0px;
-}
-.root:last-child {
-  margin-right: 0px;
+  margin-bottom: 40px;
 }
 .imageContainer {
   max-height: 248px;
@@ -31,6 +23,11 @@
   font-size: 20px;
   color: grey;
   padding-bottom: 5px;
+  max-width: 250px;
+  max-height: 28px;
+  white-space: nowrap; /* Запрещаем перенос строк */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .brand::first-letter {
   text-transform: uppercase;
